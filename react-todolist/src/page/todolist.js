@@ -6,8 +6,8 @@ export default class todolist extends Component {
         addValue: '',
         wordList: [
             { name: '投简历', state: 'done', id: 0 },
-            { name: '做面试题', state: 'undone', id: 1 },
-            { name: '面试', state: 'undone', id: 2 },
+            { name: '去面试', state: 'undone', id: 1 },
+            { name: '上班', state: 'undone', id: 2 },
         ],
         state: 'all'
     }
@@ -73,6 +73,7 @@ export default class todolist extends Component {
         this.setState({ wordList })
         this.save()
     }
+   
     render() {
         const { addValue, wordList, state } = this.state
         return (
@@ -95,7 +96,7 @@ export default class todolist extends Component {
                                     </Modal>
                                 </List.Content>
                                 <List.Content>
-                                    <List.Header onDoubleClick={() => this.doubleClick()} onClick={() => this.changeState(index)} style={i.state == 'done' ? { color: 'red', textDecoration: 'line-through' } : {}}>{i.name}</List.Header>
+                                    <List.Header onDoubleClick={() => this.doubleClick()} onClick={() => this.changeState(index)} style={i.state == 'done' ? { color: 'red', textDecoration: 'line-through',cursor:'pointer' } : {cursor:'pointer'}}>{i.name}</List.Header>
                                 </List.Content>
                             </List.Item>)
                         }
